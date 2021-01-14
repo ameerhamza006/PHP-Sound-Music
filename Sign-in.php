@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <?php session_start(); ?>
 <html lang="zxx">
 
 <!-- Mirrored from xvelopers.com/demos/html/rekord/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Jan 2021 13:59:38 GMT -->
@@ -9,20 +9,13 @@
     <meta name="author" content="">
     <link rel="icon" href="assets/img/basic/favicon.html" type="image/x-icon">
     <title>Record</title>
-    <!-- CSS -->
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/app.css">
-	<!-- Css dashboard-->
-	
 	<link rel="shortcut icon" href="images/favicon.ico" />
-      <!-- Bootstrap CSS -->
-   
-      <!-- Typography CSS -->
-      <link rel="stylesheet" href="css/typography.css">
-      <!-- Style CSS -->
-   
-      <!-- Responsive CSS -->
-    
+    <link rel="stylesheet" href="css/typography.css">
+      
+    <?php require "fun/functions.php"; ?>
  
 	
 </head>
@@ -97,6 +90,7 @@
                     <div class="row grid">
                         <div class="col-md-7 card p-5">
                           <form class="form-material needs-validation" method="post" novalidate>
+							  <?php sign_in(); ?>
                                <div class="form-group form-float">
                                         <div class="form-line">
                                             <input type="email" name="email" class="form-control"  id="validationCustom02"  required>
@@ -105,7 +99,7 @@
                                        Looks good!
                                     </div>
 									<div class="invalid-feedback">
-                                       Please enter the valid Email.
+                                       Please Enter Email.
                                     </div>		
                                         </div>
                                     </div>  
@@ -117,17 +111,18 @@
                                        Looks good!
                                     </div>
 									<div class="invalid-feedback">
-                                       Please enter the valid password.
+                                       Please Enter Password.
                                     </div>		
                                         </div>
                                     </div> 
-                              <button class="btn btn-outline-primary btn-sm pl-4 pr-4" name="btnlang" type="submit">Sign In</button>
+                              <button class="btn btn-outline-primary btn-sm pl-4 pr-4" name="btnlogin" type="submit">Sign In</button>
                            </form>
                         </div>
                         <div class="col-md-5  p-5">
                             <h1 class="mt-3 font-weight-lighter">Are You New Here?</h1>
 
-                            <div class="pt-3 mb-5">
+                            <div class="pt
+										-3 mb-5">
                                 <p>Lorem ipsum dolor sit amet, sapiente tenetur ut, veritatis.</p>
                             </div>
                             <input type="submit" value="Create Account" class="btn btn-outline-primary s-14 pl-4 pr-4">

@@ -86,7 +86,7 @@
                 <div class="mt-5">
                     <div class="row grid">
                         <div class="col-md-7 card p-5">
-                            <form class="form-material needs-validation was-validated" method="post" novalidate>
+                            <form class="form-material needs-validation" method="post" novalidate>
 								<?php Sign_up(); ?>
                                 <!-- Input -->
                                 <div class="body">
@@ -97,55 +97,93 @@
 											<div class="valid-feedback">
                                        Looks good!
                                     </div>
+											<div class="invalid-feedback">
+                                       Please Enter Fullname.
+                                    </div>
                                         </div>
                                     </div>   
                                        <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="email" name="email" class="form-control">
+                                            <input type="email" name="email" class="form-control" id="validationCustom01"  required>
                                             <label class="form-label">Email</label>
+											<div class="valid-feedback">
+                                       Looks good!
+                                    </div>
+											<div class="invalid-feedback">
+                                       Please Enter Email.
+                                    </div>
                                         </div>
                                     </div>  
                                       <div class="form-group form-float">
 
                                         <div class="form-line">
-                                            <input type="text" name="number" class="form-control">
+                                            <input type="text" name="number" class="form-control" id="validationCustom01"  required>
                                             <label class="form-label">Mobile Phone</label>
+											<div class="valid-feedback">
+                                       Looks good!
+                                    </div>
+											<div class="invalid-feedback">
+                                       Please Enter Mobile Number.
+                                    </div>
                                         </div>
                                     </div>   
                                         <div class="form-group form-float">
                                         <div class="form-line">
                                            
-											<select class="form-control" name="country">
+											<select class="form-control" name="country" id="validationCustom01"  required>
 												<option disabled selected class="form-label">Country</option>
 											<option class="form-label">Pakistan</option>
 											<option class="form-label">Dubai</option>
 											<option class="form-label">Turky</option>
 											
 											</select>
-                                          
+                                          <div class="valid-feedback">
+                                       Looks good!
+                                    </div>
+											<div class="invalid-feedback">
+                                       Please Select Country.
+                                    </div>
                                         </div>
                                     </div>
 
                                         <div class="form-group form-float">
                                         <div class="form-line">
-                                           <select class="form-control" name="city">
+                                           <select class="form-control" name="city" id="validationCustom01"  required>
 												<option disabled selected class="form-label">City</option>
 											<option class="form-label">karachi</option>
 											<option class="form-label">Lahore</option>
 											<option class="form-label">Islamabad</option>
 											
 											</select>
+											<div class="valid-feedback">
+                                       Looks good!
+                                    </div>
+											<div class="invalid-feedback">
+                                       Please Select City.
+                                    </div>
                                         </div>
                                     </div><div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" name="address" class="form-control">
+                                            <input type="text" name="address" class="form-control" id="validationCustom01"  required>
                                             <label class="form-label">Address</label>
+											<div class="valid-feedback">
+                                       Looks good!
+                                    </div>
+											<div class="invalid-feedback">
+                                       Please Enter Address.
+                                    </div>
                                         </div>
                                     </div>
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="password" name="password" class="form-control">
+                                            <input type="password" name="password" class="form-control" id="validationCustom01"  required>
                                             <label class="form-label">Password</label>
+											<div class="valid-feedback">
+                                       Looks good!
+                                    </div>
+											<div class="invalid-feedback">
+                                       Please Enter password.
+                                    </div>
                                         </div>
                                     </div>
 
@@ -179,7 +217,24 @@
 <script src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyC3YkZNNySdyR87o83QEHWglHfHD_PZqiw&amp;libraries=places"></script>
 <script src="assets/js/app.js"></script>
 
-
+<!--Dashbord-->
+	 <script src="js/jquery.min.js"></script>
+     
+      <script src="js/bootstrap.min.js"></script>
+    
+      
+      <script src="js/jquery.counterup.min.js"></script>
+     
+      <script src="js/wow.min.js"></script>
+     
+      <script src="js/slick.min.js"></script>
+     
+      <script src="js/select2.min.js"></script>
+     
+      <script src="js/jquery.magnific-popup.min.js"></script>
+     
+      <script src="js/custom.js"></script>
+	
 </body>
 
 <!-- Mirrored from xvelopers.com/demos/html/rekord/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Jan 2021 13:59:38 GMT -->

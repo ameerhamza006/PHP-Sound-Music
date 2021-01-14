@@ -2620,7 +2620,31 @@ function Sign_up()
 }
 
 
+function sign_in()
+{
+	global $connect;
+	
+	if(isset($_POST['btnlogin']))
+	{
+		$emaile = mysqli_real_escape_string($connect,$_POST['email']);
+		$passwordp = mysqli_real_escape_string($connect,$_POST['password']);
 
+		
+		$select = "select * from users where email='$emaile' AND password='$passwordp'";
+		$run = mysqli_query($connect,$select);
+		
+		$count = mysqli_num_rows($run);
+		
+		if($count == 1)
+		{
+			$_SESSION['email'] = $emaile;
+			echo "<script>location.href='index.php';</script>";
+		}else{
+			echo "<p class='text-danger text-center'>invalid email Or password</p>";
+		}
+		
+	}
+}
 
 
 

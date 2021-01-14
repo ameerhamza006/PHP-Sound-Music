@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <?php session_start(); ?>
 <html lang="zxx">
 
 <!-- Mirrored from xvelopers.com/demos/html/record/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Jan 2021 19:25:37 GMT -->
@@ -13,6 +13,32 @@
     <link rel="stylesheet" href="assets/css/app.css">
     <?php require "fun/functions.php"; ?>
 	<?php require_once('v/getid3/getid3.php'); ?>
+	
+	<?php
+	
+	if(!$_SESSION['email'])
+	{
+		echo "<script>location.href='Sign-in.php';</script>";
+	}
+	
+	$session_email = $_SESSION['email'];
+	$select = "select * from users where email='$session_email'";
+	$run = mysqli_query($connect,$select);
+	$fetch = mysqli_fetch_array($run);
+	$s_id = $fetch['0'];
+	$s_user_id = $fetch['1'];
+	$s_name = $fetch['2'];
+	$s_email = $fetch['3'];
+	$s_number = $fetch['4'];
+	$s_country = $fetch['5'];
+	$s_city = $fetch['6'];
+	$s_address = $fetch['7'];
+	$s_image = $fetch['8'];
+	$s_password = $fetch['9'];
+	
+	
+	?>
+	
     
 </head>
 
@@ -575,6 +601,10 @@
                 <i class="icon-more_vert "></i>
             </a>
             <div class="dropdown-menu p-4 dropdown-menu-right">
+				 <div class="col text-center">
+                        <a href="#" class=" text-center" ><span><?php echo $s_name ?></span></a>
+                    </div>
+				
                 <div class="row box justify-content-between my-4">
                     <div class="col text-center">
                         <a class="ajaxifyPage" href="saved.html">
