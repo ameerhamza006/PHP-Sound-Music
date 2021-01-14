@@ -144,214 +144,15 @@
             <!--@New Releases-->
 
 
+<?php Song_view_Languages(); ?>
 
-<section class="section mt-4">
+<?php Song_view_ganre(); ?>
+		
+	 <div class=" wrapper ">
+		
+		<?php video_Song_view_Languages(); video_Song_view_ganre(); ?>
+		</div>
 	
-                <div class=" row-eq-height">
-                    <div class="col-lg-12">
-                        <div class="card no-b mb-md-3 p-2">
-<div class="card-body no-p">
-<div class="tab-content" id="v-pills-tabContent1">
-
-	
-	
-  <div class="card-body has-items-overlay playlist p-5">
-	  
-	   <div class="d-flex relative align-items-center justify-content-between">
-                    <div class="mb-4">
-                        <h4>New Releases For You</h4>
-                        <p>Enjoy some new awesome music</p>
-                    </div>
-                    <a href="albums.html">View Albums<i class="icon-angle-right ml-3"></i></a>
-                </div>
-                                            <div class="row">
-                                                <div class="col-md-2 mb-3">
-                                                    <figure class="mb-2">
-                                                        <div class="img-wrapper r-10">
-                                                            <img class=" r-10" src="assets/img/demo/a7.jpg"
-                                                                 alt="/">
-                                                           <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites" data-pos="top-right" data-showaction="true" data-actiontext="ok" data-actiontextcolor="#fff" data-backgroundcolor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-2">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="figure-title">
-                                                        <h6>To Phir Ao</h6>
-                                                        <small>Atif Aslam</small>
-                                                    </div>
-                                                </div>
-												 <div class="col-md-2 mb-3">
-                                                    <figure class="mb-2">
-                                                        <div class="img-wrapper r-10">
-                                                            <img class=" r-10" src="assets/img/demo/a7.jpg"
-                                                                 alt="/">
-                                                           <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites" data-pos="top-right" data-showaction="true" data-actiontext="ok" data-actiontextcolor="#fff" data-backgroundcolor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-2">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="figure-title">
-                                                        <h6>To Phir Ao</h6>
-                                                        <small>Atif Aslam</small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2 mb-3">
-                                                    <figure class="mb-2">
-                                                        <div class="img-wrapper r-10">
-                                                            <img class=" r-10" src="assets/img/demo/a6.jpg"
-                                                                 alt="/">
-                                                            <div class="img-overlay text-white p-5">
-                                                                <div class="center-center">
-                                                                    <a class="no-ajaxy media-url"
-                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                                        <i class="icon-play s-48"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="figure-title">
-                                                        <h6>To Phir Ao</h6>
-                                                        <small>Atif Aslam</small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2 mb-3">
-                                                    <figure class="mb-2">
-                                                        <div class="img-wrapper r-10">
-                                                            <img class=" r-10" src="assets/img/demo/a5.jpg"
-                                                                 alt="/">
-                                                            <div class="img-overlay text-white p-5">
-                                                                <div class="center-center">
-                                                                    <a class="no-ajaxy media-url"
-                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                                        <i class="icon-play s-48"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="figure-title">
-                                                        <h6>To Phir Ao</h6>
-                                                        <small>Atif Aslam</small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2 mb-3">
-                                                    <figure class="mb-2">
-                                                        <div class="img-wrapper r-10">
-                                                            <img class=" r-10" src="assets/img/demo/a4.jpg"
-                                                                 alt="/">
-                                                            <div class="img-overlay text-white p-5">
-                                                                <div class="center-center">
-                                                                    <a class="no-ajaxy media-url"
-                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                                        <i class="icon-play s-48"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="figure-title">
-                                                        <h6>To Phir Ao</h6>
-                                                        <small>Atif Aslam</small>
-                                                    </div>
-                                                </div>
-												
-												<div class="col-md-2 mb-3">
-                                                    <figure class="mb-2">
-                                                        <div class="img-wrapper r-10">
-                                                            <img class=" r-10" src="assets/img/demo/a4.jpg"
-                                                                 alt="/">
-                                                            <div class="img-overlay text-white p-5">
-                                                                <div class="center-center">
-                                                                    <a class="no-ajaxy media-url"
-                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                                        <i class="icon-play s-48"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="figure-title">
-                                                        <h6>To Phir Ao</h6>
-                                                        <small>Atif Aslam</small>
-                                                    </div>
-                                                </div>
-												<div class="col-md-2 mb-3">
-                                                    <figure class="mb-2">
-                                                        <div class="img-wrapper r-10">
-                                                            <img class=" r-10" src="assets/img/demo/a4.jpg"
-                                                                 alt="/">
-                                                            <div class="img-overlay text-white p-5">
-                                                                <div class="center-center">
-                                                                    <a class="no-ajaxy media-url"
-                                                                       href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                                        <i class="icon-play s-48"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </figure>
-                                                    <div class="figure-title">
-                                                        <h6>To Phir Ao</h6>
-                                                        <small>Atif Aslam</small>
-                                                    </div>
-                                                </div>
-												
-												
-												
-                                            </div>
-	  
-	  
-	  
-                                          
-                                        </div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-</section>
-
-
-
  <!--@Banner Slider-->
         <div class=" wrapper p-3  ">
 		
@@ -1367,276 +1168,56 @@
                      data-pager="false"
                      data-controls="true"
                      data-loop="false">
+					
                     <div>
-                        <figure>
+                        <div>
                             <div class="img-wrapper">
-                                <img src="assets/img/demo/a1.jpg" alt="/">
-                                <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites"
-                                                   data-pos="top-right"
-                                                   data-showAction="true"
-                                                   data-actionText="ok"
-                                                   data-actionTextColor="#fff"
-                                                   data-backgroundColor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a></li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i
-                                                        class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-5">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="figure-title text-center p-2">
+								<a href="#">
+                                <img src="assets/img/demo/a1.jpg" alt="/" style=" height: 130px; width: 100%; ">
+									</a>
+                         
+                                <div class="figure-title card  p-2">
                                     <h5>To Phir Ao</h5>
                                     <span>Joe Doe</span>
                                 </div>
                             </div>
-                        </figure>
+                        </div>
                     </div>
+					
                     <div>
-                        <figure>
+                        <div>
                             <div class="img-wrapper">
-                                <img src="assets/img/demo/a2.jpg" alt="/">
-                                <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites"
-                                                   data-pos="top-right"
-                                                   data-showAction="true"
-                                                   data-actionText="ok"
-                                                   data-actionTextColor="#fff"
-                                                   data-backgroundColor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a></li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i
-                                                        class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-5">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="figure-title text-center p-2">
+								<a href="#">
+                                <img src="assets/img/demo/a1.jpg" alt="/" style=" height: 130px; width: 100%; ">
+									</a>
+                         
+                                <div class="figure-title card  p-2">
                                     <h5>To Phir Ao</h5>
                                     <span>Joe Doe</span>
                                 </div>
                             </div>
-                        </figure>
+                        </div>
                     </div>
-                    <div>
-                        <figure>
+					 <div>
+                        <div>
                             <div class="img-wrapper">
-                                <img src="assets/img/demo/a3.jpg" alt="/">
-                                <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites"
-                                                   data-pos="top-right"
-                                                   data-showAction="true"
-                                                   data-actionText="ok"
-                                                   data-actionTextColor="#fff"
-                                                   data-backgroundColor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a></li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track1.mp3" data-wave="assets/media/track1.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i
-                                                        class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-5">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="figure-title text-center p-2">
+								<a href="#">
+                                <img src="assets/img/demo/a1.jpg" alt="/" style=" height: 130px; width: 100%; ">
+									</a>
+                         
+                                <div class="figure-title card  p-2">
                                     <h5>To Phir Ao</h5>
                                     <span>Joe Doe</span>
                                 </div>
                             </div>
-                        </figure>
+                        </div>
                     </div>
-                    <div>
-                        <figure>
-                            <div class="img-wrapper">
-                                <img src="assets/img/demo/a4.jpg" alt="/">
-                                <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites"
-                                                   data-pos="top-right"
-                                                   data-showAction="true"
-                                                   data-actionText="ok"
-                                                   data-actionTextColor="#fff"
-                                                   data-backgroundColor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a></li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track3.mp3" data-wave="assets/media/track3.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i
-                                                        class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-5">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="figure-title text-center p-2">
-                                    <h5>To Phir Ao</h5>
-                                    <span>Joe Doe</span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div>
-                        <figure>
-                            <div class="img-wrapper">
-                                <img src="assets/img/demo/a5.jpg" alt="/">
-                                <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites"
-                                                   data-pos="top-right"
-                                                   data-showAction="true"
-                                                   data-actionText="ok"
-                                                   data-actionTextColor="#fff"
-                                                   data-backgroundColor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a></li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i
-                                                        class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-5">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="figure-title text-center p-2">
-                                    <h5>To Phir Ao</h5>
-                                    <span>Joe Doe</span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div>
-                        <figure>
-                            <div class="img-wrapper">
-                                <img src="assets/img/demo/a6.jpg" alt="/">
-                                <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites"
-                                                   data-pos="top-right"
-                                                   data-showAction="true"
-                                                   data-actionText="ok"
-                                                   data-actionTextColor="#fff"
-                                                   data-backgroundColor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a></li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i
-                                                        class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-5">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="figure-title text-center p-2">
-                                    <h5>To Phir Ao</h5>
-                                    <span>Joe Doe</span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
-                    <div>
-                        <figure>
-                            <div class="img-wrapper">
-                                <img src="assets/img/demo/a7.jpg" alt="/">
-                                <div class="img-overlay text-white">
-                                    <div class="figcaption">
-                                        <ul class="list-inline d-flex align-items-center justify-content-between">
-                                            <li class="list-inline-item">
-                                                <a href="#" class="snackbar" data-text="Added to favourites"
-                                                   data-pos="top-right"
-                                                   data-showAction="true"
-                                                   data-actionText="ok"
-                                                   data-actionTextColor="#fff"
-                                                   data-backgroundColor="#0c101b">
-                                                    <i class="icon-heart-o s-18"></i>
-                                                </a></li>
-                                            <li class="list-inline-item ">
-                                                <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
-                                                    <i class="icon-play s-48"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="album-single.html"><i
-                                                        class="icon-more s-18 pt-3"></i></a></li>
-                                        </ul>
-                                        <div class="text-center mt-5">
-                                            <h5>To Phir Ao</h5>
-                                            <span>Joe Doe</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="figure-title text-center p-2">
-                                    <h5>To Phir Ao</h5>
-                                    <span>Joe Doe</span>
-                                </div>
-                            </div>
-                        </figure>
-                    </div>
+					
 
+					
                 </div>
             </section>
-            <!--@Recommend-->
+       
 
         </div>
         </div>

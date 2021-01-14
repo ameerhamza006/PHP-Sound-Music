@@ -345,19 +345,23 @@ if($_GET['Watch'])
 
 
 
-<?php }else if($_GET['Ganre']){ $get = $_GET['Ganre'] ?>
+<?php }else if($_GET['Ganre'] || $_GET['Language'] ){ $get = $_GET['Ganre']; $get_lang = $_GET['Language']; ?>
 
 <div class="container-fluid relative animatedParent animateOnce">
     <div class="wrapper animated fadeInUpShort p-md-5 p-3">
  <section class="section">
            <div class="d-flex">
                <div class="mb-4">
-                   <h4 style="text-transform: uppercase;"><?php echo $get ?> SONGS For You</h4>
+                   <h4 style="text-transform: uppercase;"><?php echo $get.$get_lang ?> SONGS For You</h4>
                    <p>Checkout new recommended videos</p>
                </div>
            </div>
            <div class="row ">
-             <?php All_video_Song_view_ganre(); ?>
+             <?php All_video_Song_view_ganre(); 
+			   
+		         All_video_Song_view_language();
+			   
+			   ?>
            </div>
            
        </section>	
@@ -366,15 +370,16 @@ if($_GET['Watch'])
 
 <?php }else { ?>
 <div class="container-fluid relative animatedParent animateOnce">
-    <div class="wrapper animated fadeInUpShort p-md-5 p-3">
+    <div class="wrapper animated fadeInUpShort">
 		
-		<section class="section">
-            <h1 class="my-5 text-primary">Videos</h1>
+		<section class="section  p-md-5 p-3" >
+            <h1 class=" text-primary">Videos</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Architecto atque aut blanditiis consectetur
             </p>
         </section>
+		<hr style="background: #2f1b1b;">
 	<?php video_Song_view_ganre(); ?>
-		
+		<hr style="background: #2f1b1b;">
 		<?php video_Song_view_Languages(); ?>
 		
 		

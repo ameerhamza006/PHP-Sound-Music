@@ -316,20 +316,20 @@ function Song_view_ganre()
 		
 		if(!$ganre ){
 	
-echo  "   <section class='section mt-4'>
+echo  "   <section class=' mt-4'>
 				  <div class='row row-eq-height'>
                     <div class='col-lg-12'>
                         <div class='card no-b mb-md-3 p-2'>
 <div class='card-body no-p'>
 <div class='tab-content' id='v-pills-tabContent1'>
 				
-				  <div class='card-body has-items-overlay playlist p-5'>
-                <div class='d-flex relative align-items-center justify-content-between'>
+				  <div class='card-body has-items-overlay playlist p-4'>
+                <div class='d-flex relative  justify-content-between p-2'>
                     <div class='mb-4'>
                         <h4>$g_name Songs</h4>
                         <p>Enjoy some new awesome music</p>
                     </div>
-                    <a href='Songs.php?Ganre=$g_name'>View $g_name Songs<i class='icon-angle-right ml-3'></i></a>
+                    <a href='Songs.php?Ganre=$g_name'>View $g_name Songs<i class='icon-angle-right ml-1'></i></a>
                 </div>
                 <div class='lightSlider has-items-overlay playlist'
                      data-item='6'
@@ -675,7 +675,7 @@ echo  "   <section class='section mt-4'>
 function Song_view_Languages()
 {
 	global $connect;
-	
+	error_reporting(0);
 	
 	$select = "select * from languages";
 	$run = mysqli_query($connect,$select);
@@ -688,22 +688,27 @@ function Song_view_Languages()
 	$g_id = $fetch['0']; 
 	$g_name = $fetch['1']; 
 		
-		if(!$language ){
+		$select_Audio1 = "select * from audio where fk_lang='$g_id'";
+	$Audio_run1 = mysqli_query($connect,$select_Audio1);
+	$Audio_fetch1 = mysqli_fetch_array($Audio_run1);
+		$lang_name = $Audio_fetch1['4'];
+		
+		if($lang_name){
 	
-echo  "   <section class='section mt-4'>
+echo  "   <section class='mt-0'>
 				  <div class='row row-eq-height'>
                     <div class='col-lg-12'>
                         <div class='card no-b mb-md-3 p-2'>
 <div class='card-body no-p'>
 <div class='tab-content' id='v-pills-tabContent1'>
 				
-				  <div class='card-body has-items-overlay playlist p-5'>
-                <div class='d-flex relative align-items-center justify-content-between'>
+				  <div class='card-body has-items-overlay playlist p-4'>
+                <div class='d-flex relative  justify-content-between p-2'>
                     <div class='mb-4'>
                         <h4>$g_name Songs</h4>
                         <p>Enjoy some new awesome music</p>
                     </div>
-                    <a href='Songs.php?Language=$g_name'>View $g_name Songs<i class='icon-angle-right ml-3'></i></a>
+                    <a href='Songs.php?Language=$g_name'>View $g_name Songs<i class='icon-angle-right ml-1'></i></a>
                 </div>
                 <div class='lightSlider has-items-overlay playlist'
                      data-item='6'
@@ -1235,7 +1240,7 @@ echo  "<section class='section mt-4'>
 
 	
 	
-  <div class='card-body has-items-overlay playlist p-5'>
+  <div class='card-body has-items-overlay playlist p-3'>
 	  
 	   <div class='d-flex relative align-items-center justify-content-between'>
                     <div class='mb-4'>
@@ -1911,7 +1916,7 @@ function Single_View_video_Album()
                        <div class='p-3'>
                            <div class='mb-1'>
                                <a href='Video.php?Watch=$title'>
-                                   <h4>$title</h4>
+                                   <h4>$title </h4>
                                </a>
                            </div>
                            <small><a href='Artist.php?Album=$artist_name'> $artist_name</a> - $album_name</small>
@@ -2035,7 +2040,7 @@ function Single_video_song_play()
 
 
 
-#all video by 1 album view
+#all video by 1 album view | jb video play ho gi to os k right side pr osi k album sy related sari video ay gi
 function All_videos_by_one_Album()
 {
 	global $connect;
@@ -2153,7 +2158,7 @@ function All_videos_by_one_Album()
 
 
 
-#video song view by Ganres
+#video song view by Ganres | ganre sy sary song select krny k liye
 function video_Song_view_ganre()
 {
 	global $connect;
@@ -2170,28 +2175,26 @@ function video_Song_view_ganre()
 	$g_id = $fetch['0']; 
 	$g_name = $fetch['1']; 
 		
-		if(!$ganre ){
+		
 	
-echo  " <hr style='background-color: #341920;'>
-<section class='section'>
-            <div class='d-flex  relative  justify-content-between'>
-                <div class='mb-4'>
-                    <h4>$g_name Video Songs</h4>
-                    <p>Checkout new recommended videos</p>
+echo  " 
+<section class='section p-5'>
+                <div class='d-flex relative  justify-content-between'>
+                    <div class='mb-4'>
+                        <h4>$g_name Songs</h4>
+                        <p>Enjoy some new awesome music</p>
+                    </div>
+                    <a href='Video.php?Ganre=$g_name'>View $g_name Songs<i class='icon-angle-right ml-1'></i></a>
                 </div>
-				 <a href='Video.php?Ganre=$g_name'>View $g_name Songs<i class='icon-angle-right ml-1'></i></a>
-            </div>
-            <div class=' no-b r-0'>
-                <div class='my-3'>
-                    <div class='lightSlider'
-                         data-item='3'
-                         data-item-lg='2'
-                         data-item-md='1'
-                         data-item-sm='1'
-                         data-auto='false'
-                         data-pager='false'
-                         data-controls='true'
-                         data-loop='false'>";
+                <div class='lightSlider has-items-overlay playlist'
+                     data-item='6'
+                     data-item-lg='3'
+                     data-item-md='3'
+                     data-item-sm='2'
+                     data-auto='false'
+                     data-pager='false'
+                     data-controls='true'
+                     data-loop='false'>";
 		
 		$select_Video = "select * from videos where fk_ganre='$g_id'";
 	$Video_run = mysqli_query($connect,$select_Video);
@@ -2226,114 +2229,33 @@ echo  " <hr style='background-color: #341920;'>
 	$select_Album = "select * from album where id='$album'";
 	$Album_run = mysqli_query($connect,$select_Album);
 	$Album_fetch = mysqli_fetch_array($Album_run);
-	$album_name = $Album_fetch['1'];											
+	$album_name = $Album_fetch['1'];
+		$ti_al = $title." | ".$album_name;
+		$title_album = substr($ti_al, 0,37);
 												
 												
-                                               echo  "   <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-				  
-                       <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='' style='height: 180px;'>
-					 
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='Video.php?Watch=$title'>
-                                   <h4 >$title | $album_name </h4>
-                               </a>
-                           </div>
-                           <small>$artist_name</small>
-                       </div>
-                   </div>
-               </div>
-			   
-                        <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='Video.php?Watch=$title'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-						 <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			   ";
+                                               echo  " <div>
+                        <div>
+                            <div class='img-wrapper'>
+								<a href='Video.php?Watch=$title'>
+                                <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='/' style=' height: 130px; width: 100%; '>
+									</a>
+                         
+                                <div class='figure-title card  p-2'>
+								<a href='Video.php?Watch=$title'>
+                                    <h5>$title_album..</h5>
+									</a>
+									<a href='Artist.php?Album=$artist_name'>
+                                    <span>$artist_name</span>
+									</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> ";
 	
 												}
 												
-                                            echo "  </div>
-                </div>
+                                            echo "  
             </div>
         </section>
 		
@@ -2341,7 +2263,7 @@ echo  " <hr style='background-color: #341920;'>
 		
 		";
 		
-		}
+		
 	
 	}
 	
@@ -2352,7 +2274,7 @@ echo  " <hr style='background-color: #341920;'>
 
 
 
-# video song view by Languages
+# video song view by Languages | language sy sary song select krny k liye
 function video_Song_view_Languages()
 {
 	global $connect;
@@ -2369,27 +2291,32 @@ function video_Song_view_Languages()
 	$g_id = $fetch['0']; 
 	$g_name = $fetch['1']; 
 		
-		if(!$language ){
+		
+		$select_video1 = "select * from videos where fk_lang='$g_id'";
+	$video_run1 = mysqli_query($connect,$select_video1);
+	$video_fetch1 = mysqli_fetch_array($video_run1);
+		$lang_name = $video_fetch1['4'];
+		
+		if($lang_name ){
 	
-echo  " <hr style='background-color: #341920;'>
-<section class='section'>
-            <div class='d-flex'>
-                <div class='mb-4'>
-                    <h4>$g_name Videos</h4>
-                    <p>Checkout new recommended videos</p>
+echo  " 
+<section class='section p-5'>
+                <div class='d-flex relative  justify-content-between'>
+                    <div class='mb-4'>
+                        <h4>$g_name Songs</h4>
+                        <p>Enjoy some new awesome music</p>
+                    </div>
+                    <a href='Video.php?Language=$g_name'>View $g_name Songs<i class='icon-angle-right ml-1'></i></a>
                 </div>
-            </div>
-            <div class=' no-b r-0'>
-                <div class='my-3'>
-                    <div class='lightSlider'
-                         data-item='3'
-                         data-item-lg='2'
-                         data-item-md='1'
-                         data-item-sm='1'
-                         data-auto='false'
-                         data-pager='false'
-                         data-controls='true'
-                         data-loop='false'>";
+                <div class='lightSlider has-items-overlay playlist'
+                     data-item='6'
+                     data-item-lg='3'
+                     data-item-md='3'
+                     data-item-sm='2'
+                     data-auto='false'
+                     data-pager='false'
+                     data-controls='true'
+                     data-loop='false'>";
 		
 		$select_Video = "select * from videos where fk_lang='$g_id'";
 	$Video_run = mysqli_query($connect,$select_Video);
@@ -2425,113 +2352,34 @@ echo  " <hr style='background-color: #341920;'>
 	$Album_run = mysqli_query($connect,$select_Album);
 	$Album_fetch = mysqli_fetch_array($Album_run);
 	$album_name = $Album_fetch['1'];											
+	$ti_al = $title." | ".$album_name;
+		$title_album = substr($ti_al, 0,37);											
 												
-												
-                                               echo  "   <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-				  
-                       <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='' style='height: 180px;'>
-					 
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='Video.php?Watch=$title'>
-                                   <h4 >$title | $album_name </h4>
-                               </a>
-                           </div>
-                           <small>$artist_name</small>
-                       </div>
-                   </div>
-               </div>
-			   
-                        <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='Video.php?Watch=$title'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-						 <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			    <div class='col-lg-3 col-md-6 mb-4' >
-                   <div class='card no-b' >
-                       <img src='dash-board/she.jpeg' alt='' style='height: 180px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4 >Ilallah, Sounds of Kolachi, Record Studio Season</h4>
-                               </a>
-                           </div>
-                           <small>r----Record Studio</small>
-                       </div>
-                   </div>
-               </div>
-			   
-			   ";
+                                               echo  " <div>
+                        <div>
+                            <div class='img-wrapper'>
+								<a href='Video.php?Watch=$title'>
+                                <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='/' style=' height: 130px; width: 100%; '>
+									</a>
+                         
+                                <div class='figure-title card  p-2'>
+								<a href='Video.php?Watch=$title'>
+                                    <h5>$title_album..</h5>
+									</a>
+									<a href='Artist.php?Album=$artist_name'>
+                                    <span>$artist_name</span>
+									</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					";
 	
 												}
 												
-                                            echo "  </div>
-                </div>
+                                            echo " 
             </div>
         </section>
 		
@@ -2548,7 +2396,6 @@ echo  " <hr style='background-color: #341920;'>
 
 
 #all video songs by Ganres when click on Bollywood or Hollywood etc. then show this song by get Ganre name,
-#video song view by Ganres
 function All_video_Song_view_ganre()
 {
 	global $connect;
@@ -2604,43 +2451,108 @@ function All_video_Song_view_ganre()
 												
                                                echo  "    <div class='col-lg-3 col-md-6 mb-4'>
                    <div class='card no-b'>
-                       <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='' style='height: 150px;'>
+				   <a href='Video.php?Watch=$title'>
+                       <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='' style='height: 150px; width: 100% ;'>
+					   </a>
                        <div class='p-3' style='height: 100px;'>
                            <div class='mb-1'>
                                <a href='Video.php?Watch=$title'>
                                    <h4>$t_a..</h4>
                                </a>
                            </div>
+						    <a href='Artist.php?Album=$artist_name'>
                            <small>$artist_name</small>
+						   </a>
                        </div>
                    </div>
-               </div>
-			   <div class='col-lg-3 col-md-6 mb-4'>
+               </div>";
+	
+												}
+												
+                                           
+		
+		}
+	
+	}
+	
+	
+	
+	
+}
+
+
+#all video songs by language when click on Bollywood or Hollywood etc. then show this song by get language name,
+function All_video_Song_view_language()
+{
+	global $connect;
+	
+	$get_name = $_GET['Language'];
+	
+	$select = "select * from languages where name='$get_name'";
+	$run = mysqli_query($connect,$select);
+	
+	
+	
+	while($fetch = mysqli_fetch_array($run)){
+		
+		
+	$g_id = $fetch['0']; 
+	$g_name = $fetch['1']; 
+		
+		if(!$ganre ){
+	
+
+		$select_Video = "select * from videos where fk_lang='$g_id'";
+	$Video_run = mysqli_query($connect,$select_Video);
+	while( $Video_fetch = mysqli_fetch_array($Video_run)){
+									
+	$id = $Video_fetch['0'];
+	$title = $Video_fetch['1'];
+	$artist = $Video_fetch['2'];
+	$album = $Video_fetch['3'];
+	$language = $Video_fetch['4'];
+	$year = $Video_fetch['5'];
+	$ganre = $Video_fetch['6'];
+	$lyrics = $Video_fetch['7'];
+	$composer = $Video_fetch['8'];
+	$descrip = $Video_fetch['9'];
+	$image = $Video_fetch['10'];
+	$video = $Video_fetch['11'];
+											
+												
+	#for artist name
+	$select_Artist = "select * from artist where id='$artist'";
+	$artist_run = mysqli_query($connect,$select_Artist);
+	$artist_fetch = mysqli_fetch_array($artist_run);
+	$artist_name = $artist_fetch['1'];
+	
+	
+	#for Album name
+	$select_Album = "select * from album where id='$album'";
+	$Album_run = mysqli_query($connect,$select_Album);
+	$Album_fetch = mysqli_fetch_array($Album_run);
+	$album_name = $Album_fetch['1'];											
+	$ti_al = $title." | ".$album_name;
+		$t_a = substr($ti_al, 0,40);											
+												
+                                               echo  "    <div class='col-lg-3 col-md-6 mb-4'>
                    <div class='card no-b'>
-                       <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='' style='height: 150px;'>
+				   <a href='Video.php?Watch=$title'>
+                       <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='' style='height: 150px; width: 100%;'>
+					   </a>
                        <div class='p-3' style='height: 100px;'>
                            <div class='mb-1'>
-                               <a href='video-single.html'>
+                               <a href='Video.php?Watch=$title'>
                                    <h4>$t_a..</h4>
                                </a>
                            </div>
+						   <a href='Artist.php?Album=$artist_name'>
                            <small>$artist_name</small>
+						   </a>
                        </div>
                    </div>
                </div>
-			   <div class='col-lg-3 col-md-6 mb-4'>
-                   <div class='card no-b'>
-                       <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='' style='height: 150px;'>
-                       <div class='p-3' style='height: 100px;'>
-                           <div class='mb-1'>
-                               <a href='video-single.html'>
-                                   <h4>$t_a..</h4>
-                               </a>
-                           </div>
-                           <small>$artist_name</small>
-                       </div>
-                   </div>
-               </div>
+			   
 			   ";
 	
 												}
@@ -2655,6 +2567,71 @@ function All_video_Song_view_ganre()
 	
 	
 }
+
+
+
+#User Register
+function Sign_up()
+{
+	
+	global $connect;
+	
+	
+	if(isset($_POST['userbtn']))
+	{
+		$name = mysqli_real_escape_string($connect,$_POST['name']);
+		$email = mysqli_real_escape_string($connect,$_POST['email']);
+		$number = mysqli_real_escape_string($connect,$_POST['number']);
+		$country = mysqli_real_escape_string($connect,$_POST['country']);
+		$city = mysqli_real_escape_string($connect,$_POST['city']);
+		$address = mysqli_real_escape_string($connect,$_POST['address']);
+		$password = mysqli_real_escape_string($connect,$_POST['password']);
+		#remove 2 digit from number
+		$remove = substr($number,2,15);
+		#create rendom number
+		$rendom = rand(1,999);
+		#ready user_id
+		$user_id = $rendom.$remove;
+		
+		
+		
+		$user_role = "User";
+		
+		if($password < 8)
+		{
+			echo "<p class='text-danger text-center'>Password miniman 8 corecters Require</p>";
+			exit();
+		}else{
+		
+		$insert = "INSERT INTO `users`(`user_id`, `name`, `email`, `number`, `country`, `city`, `address`, `password`, `role`) VALUES ('$user_id','$name','$email','$number','$country','$city','$address','$password','$user_role')";
+		$run = mysqli_query($connect,$insert);
+		
+		if($run)
+		{
+			echo "<script>location.href='Sign-in.php';</script>";
+			
+		}else{
+			echo "<p class='text-danger text-center'>Something Wrong Please check again!</p>";
+		}
+	  }
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
