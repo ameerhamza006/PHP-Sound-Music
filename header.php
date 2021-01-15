@@ -11,15 +11,13 @@
     <title>Sound</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <?php require "fun/functions.php"; ?>
 	<?php require_once('v/getid3/getid3.php'); ?>
 	
 	<?php
 	
-	if(!$_SESSION['email'])
-	{
-		echo "<script>location.href='Sign-in.php';</script>";
-	}
+	error_reporting(0);
 	
 	$session_email = $_SESSION['email'];
 	$select = "select * from users where email='$session_email'";
@@ -520,11 +518,17 @@
                 </li>
                
     
-               
-                <li><a href="#modalSignUp" class="btn btn-primary nav-btn" data-toggle="modal"
-                       data-target="#modalSignUp">Sign
-                    Up</a>
+               <?php if(!$_SESSION['email']){  ?>
+                <li><a href="Sign-in.php" class="btn btn-primary nav-btn">Sign
+                    In</a>
                 </li>
+				<?php }else { logout(); ?>
+				<form method="post">
+				 <li> <button name="logout" class="btn btn-primary nav-btn">Logout</button>
+					 
+                </li>
+					</form>
+				<?php } ?>
             </ul>
 
         </div>

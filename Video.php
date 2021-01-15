@@ -73,101 +73,93 @@ if($_GET['Watch'])
 
                 <div class="card mt-1 mb-5">
                     <div class="card-body">
-                        <div class="media my-5 ">
-                            <div class="avatar avatar-md mr-3 mt-1">
-                                <img src="assets/img/demo/u7.png" alt="user">
-                            </div>
-                            <div class="media-body">
-                                <h6 class="mt-0">Ami Fro</h6>
-                                Cras sit amet nibh libero, in gravida nulla.
-                            </div>
-                        </div>
-                        <div class="media my-5 ">
-                            <div class="avatar avatar-md mr-3 mt-1">
-                                <img src="assets/img/demo/u6.png" alt="user">
-                            </div>
-                            <div class="media-body">
-                                <h6 class="mt-0">Sara Kamzoon</h6>
-                                vestibulum in vulputate at, tempus viverra turpis.
-                                <div class="media p-2 my-4">
-                                    <a href="#">
-                                        <div class="avatar avatar-md mr-3 mt-1">
-                                            <img src="assets/img/demo/u8.png" alt="user">
-                                        </div>
-                                    </a>
-                                    <div class="media-body">
-                                        <h6 class="mt-0">Joe Doe</h6>
-                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                        sollicitudin.
-                                    </div>
-                                </div>
-                                <div class="media p-2 my-4">
-                                    <a href="#">
-                                        <div class="avatar avatar-md mr-3 mt-1">
-                                            <img src="assets/img/demo/u7.png" alt="user">
-                                        </div>
-                                    </a>
-                                    <div class="media-body">
-                                        <h6 class="mt-0">Find Doe
-
-                                        </h6>
-                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                        sollicitudin.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="media my-5 ">
-                            <div class="avatar avatar-md mr-3 mt-1">
-                                <img src="assets/img/demo/u9.png" alt="user">
-                            </div>
-
-                            <div class="media-body">
-                                <h6 class="mt-0">Ami Fro</h6>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin. Cras purus odio, vestibulum in
-                                vulputate at, tempus viverra turpis.
-                            </div>
-                        </div>
-                        <div class="media my-5 ">
-                            <div class="avatar avatar-md mr-3 mt-1">
-                                <img src="assets/img/demo/u10.png" alt="user">
-                            </div>
-                            <div class="media-body">
-                                <h6 class="mt-0">Ami Fro </h6>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin. Cras purus odio, vestibulum in
-                                vulputate at, tempus viverra turpis.
-                            </div>
-                        </div>
+						
+						
+                        <?php view_rating_and_review(); ?>
+						
                     </div>
                 </div>
 				
 				  <div class="card mt-1 mb-5 post-comments my-5">
+	
+  
+ 
+
+
                             
                             <div class="card-body">
-                                <form class="form-material">
+                                <form class="form-material" id="com" method="post">
+									<?php rating_and_review();  ?>
+									
+									
+									<?php 
+									
+                                    $get_name = $_GET['Watch'];
+	                                $get_select = "select * from videos where title='$get_name'";
+	                                $get_run = mysqli_query($connect,$get_select);
+	                                $get_fatch = mysqli_fetch_array($get_run);
+	                                $get_id = $get_fatch['0'];
+									
+									
+									?>
+									<div class="row mb-4">
+                                        <div class="col-lg-12">
+                                            <div style="margin-left: 241px;" class="rateyo mb-2" id= "rating"
+											 data-rateyo-rating="0"
+											 data-rateyo-num-stars="5"
+											 data-rateyo-score="3">
+											 </div>
+											<span style="margin-left: 304px;" class='result'></span>
+											<input type="hidden" name="rating" />
+                                        </div>
+									</div>
+			
+									
+<script>
+
+
+    $(function () {
+        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+            var rating = data.rating;
+            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text('rating :'+ rating);
+            $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+        });
+    });
+
+</script>
+									<?php if(!$_SESSION['email']){ ?>
+									
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" placeholder="Name"/>
+                                                    <input type="text" name="name" class="form-control" placeholder="Name"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" placeholder="Subject"/>
+                                                    <input type="text" name="email" class="form-control" placeholder="Email"/>
+													<input type="hidden" name="song_id" value="<?php echo $get_id ?>" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+									<?php }else{ ?>
+									<input type="hidden" name="user_id" value="<?php echo $s_id ?>" />
+									<input type="hidden" name="name" value="<?php echo $s_name ?>" />
+									<input type="hidden" name="email" value="<?php echo $s_email ?>" />
+									<input type="hidden" name="song_id" value="<?php echo $get_id ?>" />
+									
+									
+										<?php } ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                      <textarea rows="5" class="form-control r-0"
+                                                      <textarea name="msg" rows="5" class="form-control r-0"
                                                                 placeholder="Message"></textarea>
                                                 </div>
                                             </div>
@@ -176,7 +168,7 @@ if($_GET['Watch'])
                                     </div>
                                     <div class="row text-center">
 
-                                        <div class="col-lg-12"><input type="submit" class="btn btn-primary r-0"
+                                        <div class="col-lg-12"><input name="btncomment" type="submit" class="btn btn-primary r-0"
                                                                       value="Post Comment"></div>
                                     </div>
                                 </form>
