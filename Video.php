@@ -2,10 +2,97 @@
 error_reporting(0);
 require 'header.php'; $page = "Video";
 
+
+
 if($_GET['Watch'])
 {
 
 ?>
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+	<div id="result"></div>
+	<div id="resultt"></div>
+<div id="Edit"></div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content card">
+      
+      
+         <div class="col-md-12 card p-5">
+			 
+                            <form class="form-material"  method="post" >
+								
+									
+									
+									<?php 
+									
+                                    $get_name = $_GET['Watch'];
+	                                $get_select = "select * from videos where title='$get_name'";
+	                                $get_run = mysqli_query($connect,$get_select);
+	                                $get_fatch = mysqli_fetch_array($get_run);
+	                                $get_id = $get_fatch['0'];
+									
+									
+									?>
+									<div class="row mb-4">
+                                        <div class="col-lg-12">
+                                            <div style="margin-left: 111px;" class="rateyo mb-2" id= "rating"
+											 data-rateyo-rating="0"
+											 data-rateyo-num-stars="5"
+											 data-rateyo-score="3">
+											 </div>
+											<span style="margin-left: 175px;" class='result'></span>
+											<input type="hidden" name="rating" />
+                                        </div>
+									</div>
+			
+
+									
+									<input type="hidden" name="user_id" value="<?php echo $s_id ?>" />
+									<input type="hidden" name="name" value="<?php echo $s_name ?>" />
+									<input type="hidden" name="email" value="<?php echo $s_email ?>" />
+									<input type="hidden" name="song_id" value="<?php echo $get_id ?>" />
+									
+									
+										
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+													<label>Review</label>
+                                                      <textarea name="msg" rows="5" class="form-control r-0"
+                                                               ></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row text-center">
+
+                                        <div class="col-lg-12">
+											<input name="btncomment" data-dismiss="modal" type="button" class="btn btn-success r-0"
+                                                                      value="Cancle">
+											<input name="btncomment" type="submit" class="btn btn-primary r-0"
+                                                                      value="Edit Review">
+										
+										</div>
+                                    </div>
+                                </form>
+                        </div>
+      
+      
+    </div>
+
+  </div>
+</div>
+
 
 
 <div class="container-fluid relative animatedParent animateOnce">
@@ -70,27 +157,11 @@ if($_GET['Watch'])
                         </div>
                     </div>
                 </div>
-
-                <div class="card mt-1 mb-5">
-                    <div class="card-body">
-						
-						
-                        <?php view_rating_and_review(); ?>
-						
-                    </div>
-                </div>
-				
-				  <div class="card mt-1 mb-5 post-comments my-5">
+                     <div class="card mt-1 mb-1 post-comments ">
 	
-  
- 
-
-
-                            
-                            <div class="card-body">
-                                <form class="form-material" id="com" method="post">
-									<?php rating_and_review();  ?>
-									
+                            <div class="card-body ">
+								
+                              <form class="form-material" id="myform" method="post" action="fun/Add-comments.php">
 									
 									<?php 
 									
@@ -110,13 +181,14 @@ if($_GET['Watch'])
 											 data-rateyo-score="3">
 											 </div>
 											<span style="margin-left: 304px;" class='result'></span>
-											<input type="hidden" name="rating" />
+											<input type="hidden"  name="rating" />
                                         </div>
 									</div>
 			
 									
 <script>
 
+	
 
     $(function () {
         $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
@@ -127,6 +199,9 @@ if($_GET['Watch'])
         });
     });
 
+	
+	
+	
 </script>
 									<?php if(!$_SESSION['email']){ ?>
 									
@@ -134,24 +209,24 @@ if($_GET['Watch'])
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" name="name" class="form-control" placeholder="Name"/>
+                                                    <input type="text" name="name"  class="form-control" placeholder="Name"/>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" name="email" class="form-control" placeholder="Email"/>
+                                                    <input type="text" name="email"  class="form-control" placeholder="Email"/>
 													<input type="hidden" name="song_id" value="<?php echo $get_id ?>" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 									<?php }else{ ?>
-									<input type="hidden" name="user_id" value="<?php echo $s_id ?>" />
-									<input type="hidden" name="name" value="<?php echo $s_name ?>" />
-									<input type="hidden" name="email" value="<?php echo $s_email ?>" />
-									<input type="hidden" name="song_id" value="<?php echo $get_id ?>" />
+									<input type="hidden"  name="user_id" value="<?php echo $s_id ?>" />
+									<input type="hidden"  name="name" value="<?php echo $s_name ?>" />
+									<input type="hidden"  name="email" value="<?php echo $s_email ?>" />
+									<input type="hidden"  name="song_id" value="<?php echo $get_id ?>" />
 									
 									
 										<?php } ?>
@@ -159,7 +234,7 @@ if($_GET['Watch'])
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                      <textarea name="msg" rows="5" class="form-control r-0"
+                                                      <textarea name="msg"  rows="5" class="form-control r-0"
                                                                 placeholder="Message"></textarea>
                                                 </div>
                                             </div>
@@ -168,14 +243,63 @@ if($_GET['Watch'])
                                     </div>
                                     <div class="row text-center">
 
-                                        <div class="col-lg-12"><input name="btncomment" type="submit" class="btn btn-primary r-0"
-                                                                      value="Post Comment"></div>
+                                        <div class="col-lg-12">
+											<button id="btncom" name="btncom" type="submit"  class="btn btn-primary r-0" >Post Comment</button>
+											</div>
                                     </div>
                                 </form>
                             </div>
                         </div>
+                <div class="card mt-1 mb-5">
+                    <div class="card-body">
+						
+						
+                        <?php view_rating_and_review(); ?>
+						
+                    </div>
+                </div>
+				
+				 
 
             </div>
+			
+			<script>
+		//add comment
+			$("#btncom").click(function(){
+				
+				
+				$.post( $("#myform").attr("action"),$("#myform :input").serializeArray(),function(info){
+					$("#result").html(info);
+					$("#myform :input").val("");
+				});
+			});
+			
+			$("#myform").submit(function(){
+				return false;
+			});
+				
+				
+				
+			//edit comment
+			function Editcom(w){
+				var eid=w;
+				
+				$.ajax({
+					url:'fun/Add-comments.php',
+					type:'post',
+					data:{eid:eid},
+					success:function(data){
+						$("#Edit").html(data);
+						
+					}
+				});
+				
+			}	
+	              //edit post
+				
+				
+			</script>
+			
             <div class="col-12 col-lg-4">
                 <div class="card pt-3">
                     <div class="card-header">
@@ -381,7 +505,6 @@ if($_GET['Watch'])
 		
 	</div>
 	</div>
-
 
 
 

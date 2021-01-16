@@ -556,7 +556,7 @@
             </a>
         </div>
         <!--Player-->
-        <div id="mediaPlayer" class="player-bar col-lg-8 col-md-5" data-auto="true">
+        <div id="mediaPlayer" class="player-bar col-lg-8 col-md-5" >
             <div class="row align-items-center grid">
                 <div class="col">
                     <div class="d-flex align-items-center">

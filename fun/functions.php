@@ -2670,6 +2670,9 @@ function rating_and_review(){
 	
 	if(isset($_POST['btncomment']))
 	{
+		
+		
+		
 		$rating = mysqli_real_escape_string($connect,$_POST['rating']);
 		$user_id = mysqli_real_escape_string($connect,$_POST['user_id']);
 		$song_id = mysqli_real_escape_string($connect,$_POST['song_id']);
@@ -2701,7 +2704,7 @@ function view_rating_and_review(){
 	$fetch_video = mysqli_fetch_array($run_video);
 	$video_id = $fetch_video['0'];
 	
-	$select = "select * from comments where fk_song='$video_id'";
+	$select = "select * from comments where fk_song='$video_id' ORDER BY id DESC";
 	$run = mysqli_query($connect,$select);
 	$count = mysqli_num_rows($run);
 	
@@ -2753,19 +2756,23 @@ function view_rating_and_review(){
 								echo "
                                 $comment_msg
 								<div class='row'>
-								 <a href='#' class='snackbar ml-3' data-text='You Like This Comment!'
+								 <a  class='snackbar ml-3' data-text='You Like This Comment!'
                                        data-pos='top-right'
                                        data-showAction='true'
                                        data-actionText='ok'
                                        data-actionTextColor='#fff'
                                        data-backgroundColor='#0c101b'><i class='mt-2 icon-heart s-8'></i></a>";
 									   if($_SESSION['email'] && $comment_email == $_SESSION['email']){
-										  
-								     echo "<a href='#com' class='ml-2'>Edit</a>";
-										  
+										
+
+
+								      echo "<div style='color:#ff1744;' onClick='Editcom($comment_id)' class='ml-2' type='button' data-toggle='modal' data-target='#myModal'>Edit</div>";
+										 # echo "<a href='#&Review=$comment_id' type='button' data-toggle='modal' data-target='#myModal'>Edit</a>";
 										   
 									   }else{
-										    echo "<a href='#com' class='ml-2'>Reply</a>";
+										  
+										    echo "<a href='#' class='ml-2'>Reply</a>";
+										   
 									   }
 								echo "</div>
                             </div>
