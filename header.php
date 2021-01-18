@@ -11,6 +11,15 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+         
+         
+
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<link rel="stylesheet" href="assets/js/jquery.rateyo.min.css">
+	
     <?php require "fun/functions.php"; ?>
 	<?php require_once('v/getid3/getid3.php'); ?>
 	
@@ -330,142 +339,51 @@
             <use xlink:href="#icon-cross"></use>
         </svg>
     </button>
-    <div class="searchOverlay__inner  searchOverlay__inner--up">
-        <form class="searchOverlay__form" action="">
-            <input
-                    class="searchOverlay__input"
-                    name="searchOverlay"
-                    type="text"
-                    placeholder="Search"
-                    autocomplete="off"
-                    spellcheck="false"
-            />
+    <div class="searchOverlay__inner  searchOverlay__inner--up ">
+  <form class="searchOverlay__form" >
+      
+	  <input type="text" name="country" placeholder="Search123" autocomplete="off" spellcheck="false" class="form-control" id="country" style="height: 118px;" />
             <span class="searchOverlay__info">Hit enter to searchOverlay or ESC to close</span>
-        </form>
+      </form>
+		
     </div>
+	
     <div class="searchOverlay__inner searchOverlay__inner--down">
         <div class="searchOverlay__related">
-            <div class="searchOverlay__suggestion">
-                <div class="card mb-3">
-                    <div class="card-header transparent b-b">
-                        <strong>New Artists</strong>
-                    </div>
-                    <ul class="playlist list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="col-10">
-                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
-                                        <img src="assets/img/demo/u1.jpg" alt="">
-                                    </figure>
-                                    <h6>Zoe Foe</h6>
-                                    <small>5 Albums - 50 Songs</small>
-                                </div>
-                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="col-10">
-                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
-                                        <img src="assets/img/demo/u2.jpg" alt="">
-                                    </figure>
-                                    <h6>Zoe Foe</h6>
-                                    <small>5 Albums - 50 Songs</small>
-                                </div>
-                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="col-10">
-                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
-                                        <img src="assets/img/demo/u3.jpg" alt="">
-                                    </figure>
-                                    <h6>Zoe Foe</h6>
-                                    <small>5 Albums - 50 Songs</small>
-                                </div>
-                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center">
-                                <div class="col-10">
-                                    <figure class="avatar avatar-md float-left  mr-3 mt-1">
-                                        <img src="assets/img/demo/u6.jpg" alt="">
-                                    </figure>
-                                    <h6>Zoe Foe</h6>
-                                    <small>5 Albums - 50 Songs</small>
-                                </div>
-                                <a href="#" class="ml-auto"><i class="icon-more"></i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="searchOverlay__suggestion" id="countryList">
+            
             </div>
-            <div class="searchOverlay__suggestion">
-                <div class="card mb-3">
-                    <div class="card-header transparent b-b">
-                        <strong>Events</strong>
-                    </div>
-                    <ul class="playlist list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center ">
-                                <div class="col-8 ">
-                                    <a href="video-single.html">
-                                        <h6>Battal of Bands</h6>
-                                    </a>
-                                    <small class="mt-1"><i class="icon-placeholder-3 mr-1 "></i> London Music Hall
-                                    </small>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="text-lg-center  bg-primary r-10 p-2 text-white primary-bg">
-                                        <div class="s-18">24</div>
-                                        <small>July, 2019</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center ">
-                                <div class="col-8 ">
-                                    <a href="video-single.html">
-                                        <h6>Battal of Bands</h6>
-                                    </a>
-                                    <small class="mt-1"><i class="icon-placeholder-3 mr-1 "></i> London Music Hall
-                                    </small>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="text-lg-center  bg-primary r-10 p-2 text-white primary-bg">
-                                        <div class="s-18">08</div>
-                                        <small>July, 2019</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="d-flex align-items-center ">
-                                <div class="col-8 ">
-                                    <a href="video-single.html">
-                                        <h6>Battal of Bands</h6>
-                                    </a>
-                                    <small class="mt-1"><i class="icon-placeholder-3 mr-1 "></i> London Music Hall
-                                    </small>
-                                </div>
-                                <div class="ml-auto">
-                                    <div class="text-lg-center  bg-primary r-10 p-2 text-white primary-bg">
-                                        <div class="s-18">12</div>
-                                        <small>July, 2019</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
+        
         </div>
     </div>
 </div>
+	
+	
+	
+	<script>  
+ $(document).ready(function(){  
+      $('#country').keyup(function(){  
+           var query = $(this).val();  
+           if(query != '')  
+           {  
+                $.ajax({  
+                     url:"fun/search.php",  
+                     method:"POST",  
+                     data:{query:query},  
+                     success:function(data)  
+                     {  
+                          $('#countryList').fadeIn();  
+                          $('#countryList').html(data);  
+                     }  
+                });  
+           }  
+      });  
+      $(document).on('click', 'h6', function(){  
+           $('#country').val($(this).text());  
+           $('#countryList').fadeOut();  
+      });  
+ });  
+ </script>
 
 		<nav class="mainnav navbar navbar-default justify-content-between">
     <!--to center logo replace classess by:  navbar-center -->

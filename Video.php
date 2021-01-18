@@ -21,13 +21,7 @@ if($_GET['Watch'])
 
 ?>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-         
-         
-
-<script src="assets/js/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<link rel="stylesheet" href="assets/js/jquery.rateyo.min.css">
+ 
 
 
 	<div id="result"></div>
