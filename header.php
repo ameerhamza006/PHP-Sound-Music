@@ -1,7 +1,6 @@
 <!DOCTYPE html> <?php session_start(); ?>
 <html lang="zxx">
 
-<!-- Mirrored from xvelopers.com/demos/html/record/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Jan 2021 19:25:37 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -106,7 +105,7 @@
             <a class="navbar-brand d-none d-lg-block" href="index.html" style="
     margin-left: 19px;">
                 <div class="d-flex align-items-center s-14 l-s-2">
-                    <span>RECORD</span>
+                    <span>SOUND</span>
                 </div>
             </a>
         </div>
@@ -332,7 +331,7 @@
         </svg>
     </button>
     <div class="searchOverlay__inner  searchOverlay__inner--up">
-        <form class="searchOverlay__form" action="https://xvelopers.com/demos/html/record/index.html">
+        <form class="searchOverlay__form" action="">
             <input
                     class="searchOverlay__input"
                     name="searchOverlay"
@@ -476,11 +475,11 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i></i>
     </a>
-    <a class="navbar-brand" href="index.html" style="
-    margin-left: 94px;
+    <a class="navbar-brand" href="index.php" style="
+    margin-left: 70px;
 ">
         <div class="d-flex align-items-center s-14 l-s-2">
-            <span>RECORD</span>
+            <span>SOUND</span>
         </div>
     </a>
     <div class="paper_menu ml-auto">
@@ -523,8 +522,10 @@
                     In</a>
                 </li>
 				<?php }else { logout(); ?>
+				
 				<form method="post">
-				 <li> <button name="logout" class="btn btn-primary nav-btn">Logout</button>
+				 <li>
+					 <button name="logout" class="btn btn-primary btb-xs ">Logout</button>
 					 
                 </li>
 					</form>
@@ -551,7 +552,7 @@
             </a>
             <a class="navbar-brand d-none d-lg-block" href="index.html">
                 <div class="d-flex align-items-center s-14 l-s-2">
-                    <span> hekloRECORD</span>
+                    <span> SOUND</span>
                 </div>
             </a>
         </div>

@@ -6,19 +6,250 @@ require 'header.php'; $page = "Video";
 
 if($_GET['Watch'])
 {
+	
+    $get_name = $_GET['Watch'];
+   
+    $select_video = "select * from videos where title='$get_name'";
+	$run_video = mysqli_query($connect,$select_video);
+	$fetch_video = mysqli_fetch_array($run_video);
+	$video_id = $fetch_video['0'];
+	
+	$select = "select * from comments where fk_song='$video_id' ORDER BY id DESC";
+	$run = mysqli_query($connect,$select);
+	$count = mysqli_num_rows($run); 
+
 
 ?>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+         
+         
+
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<link rel="stylesheet" href="assets/js/jquery.rateyo.min.css">
+
 
 	<div id="result"></div>
 	<div id="resultt"></div>
 <div id="Edit"></div>
 
+<!----Add comment model --->
+<div id="add_data_Modal" class="modal fade">  
+      <div class="modal-dialog">  
+           <div class="modal-content card">  
+                <div class="modal-header card">  
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>  
+               
+					<input type="button" class="modal-title edittitle" 
+    style="margin-left: 176px;     background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 22px;
+    color: #9a9a9a;
+}" name="edittitle" id="edittitle" value="edittitle"/>
+                </div>  
+                <div class="modal-body card">  
+                     <!--<form method="post" id="insert_form"> 
+                    
+                          <label>Enter Employee Name</label>  
+                          <input type="text" name="name" id="name" class="form-control" />  
+                          <br />  
+                          <label>Enter Employee Address</label>  
+                          <textarea name="address" id="address" class="form-control"></textarea>  
+                          <br />  
+                          <label>Select Gender</label>  
+                          <select name="gender" id="gender" class="form-control">  
+                               <option value="Male">Male</option>  
+                               <option value="Female">Female</option>  
+                          </select>  
+                          <br />  
+                          <label>Enter Designation</label>  
+                          <input type="text" name="designation" id="designation" class="form-control" />  
+                          <br />  
+                          <label>Enter Age</label>  
+                          <input type="text" name="age" id="age" class="form-control" />  
+                          <br />  
+                          <input type="hidden" name="employee_id" id="employee_id" />  
+                          <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
+                     </form> --> 
+					
+					<div class="card-body ">
+								<!--insert comment-->
+						    <form method="post" id="insert_form" class="form-material">
+                             <!-- <form class="form-material" id="myform" method="post" action="fun/Add-comments.php"> -->
+									
+									<?php 
+									
+                                    $get_name = $_GET['Watch'];
+	                                $get_select = "select * from videos where title='$get_name'";
+	                                $get_run = mysqli_query($connect,$get_select);
+	                                $get_fatch = mysqli_fetch_array($get_run);
+	                                $get_id = $get_fatch['0'];
+									
+									
+									?>
+									<div class="row mb-4">
+                                        <div class="col-lg-12">
+                                            <div style="margin-left: 120px;" class="rateyo mb-2" id= "rating"
+											 data-rateyo-rating="0"
+											 data-rateyo-num-stars="5"
+											 data-rateyo-score="3">
+											 </div>
+											<span style="margin-left: 176px;"  class='result'></span>
+											<input type="hidden" id="rating"   name="rating" />
+											<input type="hidden" id="get_name" name="get_name"  name="rating" value="<?php echo  $get_name ?>" />
+                                        </div>
+									</div>
+			
+									
+<script>
 
+	
+
+    $(function () {
+        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+            var rating = data.rating;
+            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text('rating :'+ rating);
+            $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+        });
+    });
+
+	
+	
+	
+</script>
+									
+                                    
+									
+									<input type="hidden"  id="user_id"  name="user_id" value="<?php echo $s_id ?>" />
+									<input type="hidden" id="name" name="name" value="<?php echo $s_name ?>" />
+									<input type="hidden" id="email" name="email" value="<?php echo $s_email ?>" />
+									<input type="hidden" id="song_id" name="song_id" value="<?php echo $get_id ?>" />
+									
+									
+										
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                      <textarea name="msg" id="msg" rows="5" class="form-control r-0"
+                                                                placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row text-center">
+
+                                        <div class="col-lg-12">
+											 <input type="hidden" name="comment_id" id="comment_id" />  
+                          <input type="submit" name="insert" id="insert" value="Add Review" class="btn btn-primary r-0" /> 
+						      <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+											
+											</div>
+                                    </div>
+                                </form>
+                            </div>
+					
+                </div>  
+                <div class="modal-footer card">  
+                   
+                </div>  
+           </div>  
+      </div>  
+ </div>
+
+<script>  
+
+
+
+ $(document).ready(function(){  
+      $('#add').click(function(){  
+           $('#insert').val("Add Review");  
+           $('#edittitle').val("Add Review");  
+           $('#insert_form')[0].reset();  
+      });  
+      $(document).on('click', '.edit_data', function(){  
+           var comment_id = $(this).attr("id");  
+           $.ajax({  
+                url:"fun/fetch.php",  
+                method:"POST",  
+                data:{comment_id:comment_id},  
+                dataType:"json",  
+                success:function(data){  
+                     $('#rating').val(data.rating);  
+                     $('#msg').val(data.review);  
+                    
+                     $('#comment_id').val(data.id);  
+                     $('#insert').val("Update");  
+                     $('#edittitle').val("Edit Review");  
+                    
+                   
+                     $('#add_data_Modal').modal('show');  
+                }  
+           });  
+      });  
+      $('#insert_form').on("submit", function(event){  
+           event.preventDefault();  
+           if($('#msg').val() == "" )  
+           {  
+                alert("Rating Or Review is Required");  
+           } else if($('#name').val() == "")
+			   {
+				   
+			   }else if($('#email').val() == "")
+						{
+						
+						}else if($('#user_id').val() == "")
+								 {
+								 
+								 }else if($('#song_id').val() == "")
+								 {
+									 
+								 }
+						   
+           
+           else  
+           {  
+                $.ajax({  
+                     url:"fun/insert.php",  
+                     method:"POST",  
+                     data:$('#insert_form').serialize(),  
+                     beforeSend:function(){  
+                          $('#insert').val("Inserting");  
+                     },  
+                     success:function(data){  
+                          $('#insert_form')[0].reset();  
+                          $('#add_data_Modal').modal('hide');  
+                          $('#comment_table').html(data);  
+                     }  
+                });  
+           }  
+      });  
+      $(document).on('click', '.view_data', function(){  
+           var employee_id = $(this).attr("id");  
+           if(employee_id != '')  
+           {  
+                $.ajax({  
+                     url:"fun/select.php",  
+                     method:"POST",  
+                     data:{employee_id:employee_id},  
+                     success:function(data){  
+                          $('#employee_detail').html(data);  
+                          $('#dataModal').modal('show');  
+                     }  
+                });  
+           }            
+      });  
+ });  
+ </script>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="mmmyModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -160,101 +391,110 @@ if($_GET['Watch'])
                      <div class="card mt-1 mb-1 post-comments ">
 	
                             <div class="card-body ">
-								
+								<!--insert comment-->
                               <form class="form-material" id="myform" method="post" action="fun/Add-comments.php">
 									
-									<?php 
 									
-                                    $get_name = $_GET['Watch'];
-	                                $get_select = "select * from videos where title='$get_name'";
-	                                $get_run = mysqli_query($connect,$get_select);
-	                                $get_fatch = mysqli_fetch_array($get_run);
-	                                $get_id = $get_fatch['0'];
-									
-									
-									?>
-									<div class="row mb-4">
-                                        <div class="col-lg-12">
-                                            <div style="margin-left: 241px;" class="rateyo mb-2" id= "rating"
-											 data-rateyo-rating="0"
-											 data-rateyo-num-stars="5"
-											 data-rateyo-score="3">
-											 </div>
-											<span style="margin-left: 304px;" class='result'></span>
-											<input type="hidden"  name="rating" />
-                                        </div>
-									</div>
-			
-									
-<script>
-
-	
-
-    $(function () {
-        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
-            var rating = data.rating;
-            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
-            $(this).parent().find('.result').text('rating :'+ rating);
-            $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
-        });
-    });
-
-	
-	
-	
-</script>
-									<?php if(!$_SESSION['email']){ ?>
-									
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" name="name"  class="form-control" placeholder="Name"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" name="email"  class="form-control" placeholder="Email"/>
-													<input type="hidden" name="song_id" value="<?php echo $get_id ?>" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-									<?php }else{ ?>
-									<input type="hidden"  name="user_id" value="<?php echo $s_id ?>" />
-									<input type="hidden"  name="name" value="<?php echo $s_name ?>" />
-									<input type="hidden"  name="email" value="<?php echo $s_email ?>" />
-									<input type="hidden"  name="song_id" value="<?php echo $get_id ?>" />
-									
-									
-										<?php } ?>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                      <textarea name="msg"  rows="5" class="form-control r-0"
-                                                                placeholder="Message"></textarea>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="row text-center">
+                                    <div class="row ">
 
                                         <div class="col-lg-12">
-											<button id="btncom" name="btncom" type="submit"  class="btn btn-primary r-0" >Post Comment</button>
+											<?php if($_SESSION['email']){ ?>
+											 <button type="button" name="add" id="add" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-primary r-0">Post Comment</button>
+											<?php }else{ ?>
+											 <a href="Sign-in.php" class="btn btn-primary r-0">Post Comment</a>
+											<?php } ?>
 											</div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                 <div class="card mt-1 mb-5">
-                    <div class="card-body">
+                    <div class="card-body" id="comment_table" >
 						
 						
-                        <?php view_rating_and_review(); ?>
+                        <?php 
+						
+						
+	while($fetch = mysqli_fetch_array($run)){
+		$comment_id = $fetch['0'];
+		$comment_name = $fetch['1'];
+		$comment_email = $fetch['2'];
+		$comment_rating = $fetch['3'];
+		$comment_msg = $fetch['4'];
+		$comment_user = $fetch['5'];
+		$comment_song = $fetch['6'];
+		$comment_date = $fetch['7'];
+		$date_short = substr($comment_date,0,16);
+						
+						echo "  <div class='media my-5 '>
+		<style>
+		
+		.colorr{
+		
+		color: #f39c12;
+		}
+		
+		</style>
+                            <div class='avatar avatar-md mr-3 mt-1'>
+                                <img src='assets/img/demo/u7.png' alt='user'>
+                            </div>
+                            <div class='media-body'>
+								<div class='row'>
+                                <h6 class='mt-0 ml-2 mr-1'>$comment_name</h6> <span class='mt-1' style='font-size: 10px;'>$date_short</span>
+									</div>";
+		                            if($comment_rating == 0){
+										echo "<div ><span >★</span><span >★</span><span >★</span><span >★</span><span >★</span></div>";
+									}else
+									if($comment_rating <= 1)
+									{
+										echo "<div ><span class='colorr' >★</span><span >★</span><span>★</span><span >★</span><span >★</span></div>";
+									}else if($comment_rating <= 2  ) {
+									echo "<div ><span class='colorr' >★</span><span class='colorr' >★</span><span >★</span><span >★</span><span >★</span></div>";
+									}else if($comment_rating <= 3) {
+									echo "<div ><span class='colorr' >★</span><span class='colorr' >★</span><span class='colorr' >★</span><span >★</span><span >★</span></div>";
+									}else if($comment_rating <= 4) {
+										echo "<div ><span class='colorr' >★</span><span class='colorr' >★</span><span class='colorr' >★</span><span class='colorr' >★</span><span >★</span></div>";
+									}else if($comment_rating <= 5) {
+										echo "<div ><span class='colorr' >★</span><span class='colorr' >★</span><span class='colorr' >★</span><span class='colorr' >★</span><span class='colorr' >★</span></div>";
+									}
+								echo "
+                                $comment_msg
+								<div class='row'>
+								 <a  class='snackbar ml-3' data-text='You Like This Comment!'
+								 style='color: #ff1744;'
+                                       data-pos='top-right'
+                                       data-showAction='true'
+                                       data-actionText='ok'
+                                       data-actionTextColor='#fff'
+                                       data-backgroundColor='#0c101b'><i class='mt-2 icon-heart s-8'></i></a>";
+									   if($_SESSION['email'] && $comment_email == $_SESSION['email']){
+										
+
+
+								      echo "<input type='button' name='edit' value='Edit' id='$comment_id' class=' edit_data' 
+									  style='background-color: Transparent;
+										background-repeat: no-repeat;
+										border: none;
+										cursor: pointer;
+										overflow: hidden;
+
+										color: #ff1744;
+									}'
+									  />";
+										 # echo "<a href='#&Review=$comment_id' type='button' data-toggle='modal' data-target='#myModal'>Edit</a>";
+										   
+									   }else{
+										  
+										    echo "<a href='#' class='ml-2'>Reply</a>";
+										   
+									   }
+								echo "</div>
+                            </div>
+                        </div>";
+						
+	}
+						
+						?>
 						
                     </div>
                 </div>
@@ -263,44 +503,9 @@ if($_GET['Watch'])
 
             </div>
 			
-			<script>
-		//add comment
-			$("#btncom").click(function(){
-				
-				
-				$.post( $("#myform").attr("action"),$("#myform :input").serializeArray(),function(info){
-					$("#result").html(info);
-					$("#myform :input").val("");
-				});
-			});
+		
 			
-			$("#myform").submit(function(){
-				return false;
-			});
-				
-				
-				
-			//edit comment
-			function Editcom(w){
-				var eid=w;
-				
-				$.ajax({
-					url:'fun/Add-comments.php',
-					type:'post',
-					data:{eid:eid},
-					success:function(data){
-						$("#Edit").html(data);
-						
-					}
-				});
-				
-			}	
-	              //edit post
-				
-				
-			</script>
-			
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4" >
                 <div class="card pt-3">
                     <div class="card-header">
                         <h6>You May Also like</h6>
