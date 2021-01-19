@@ -2786,6 +2786,258 @@ function view_rating_and_review(){
 }
 
 
+#for single video page 
+function All_songs(){
+	global $connect;
+	
+	$output="";
+	
+	$select = "select * from videos ORDER BY id DESC  LIMIT 12";
+	$run = mysqli_query($connect,$select);
+	
+	while($Video_fetch = mysqli_fetch_array($run))
+	{
+		$id = $Video_fetch['0'];
+	$title = $Video_fetch['1'];
+	$artist = $Video_fetch['2'];
+	$album = $Video_fetch['3'];
+	$language = $Video_fetch['4'];
+	$year = $Video_fetch['5'];
+	$ganre = $Video_fetch['6'];
+	$lyrics = $Video_fetch['7'];
+	$composer = $Video_fetch['8'];
+	$descrip = $Video_fetch['9'];
+	$image = $Video_fetch['10'];
+	$video = $Video_fetch['11'];
+		
+		#for artist name
+	$select_Artist = "select * from artist where id='$artist'";
+	$artist_run = mysqli_query($connect,$select_Artist);
+	$artist_fetch = mysqli_fetch_array($artist_run);
+	$artist_name = $artist_fetch['1'];
+	
+	
+	#for Album name
+	$select_Album = "select * from album where id='$album'";
+	$Album_run = mysqli_query($connect,$select_Album);
+	$Album_fetch = mysqli_fetch_array($Album_run);
+	$album_name = $Album_fetch['1'];											
+	$ti_al = $title." | ".$album_name;
+		$t_a = substr($ti_al, 0,40);		
+		
+		   $output   .= "  <div class='d-flex align-items-center mb-4 ''>
+                                    <div class='col-5'>
+									 <a href='Video.php?Watch=$title'>
+                                        <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='Card image' style='height: 65px; width: 100%;'>
+										</a>
+                                    </div>
+                                    <div  style='margin-top: -27px;'>
+                                        <a href='Video.php?Watch=$title'>
+                                            <h6>$t_a.. </h6>
+                                        </a>
+                                        <small class='mt-1'>$album_name</small>
+                                    </div>
+                                </div>";
+	
+		
+		
+	}
+	
+	echo $output;
+	
+}
+
+function slider_video()
+{
+	global $connect;
+	
+	$output="";
+	
+	$select = "select * from videos ORDER BY id DESC  LIMIT 6";
+	$run = mysqli_query($connect,$select);
+	
+	while($Video_fetch = mysqli_fetch_array($run))
+	{
+		$id = $Video_fetch['0'];
+	$title = $Video_fetch['1'];
+	$artist = $Video_fetch['2'];
+	$album = $Video_fetch['3'];
+	$language = $Video_fetch['4'];
+	$year = $Video_fetch['5'];
+	$ganre = $Video_fetch['6'];
+	$lyrics = $Video_fetch['7'];
+	$composer = $Video_fetch['8'];
+	$descrip = $Video_fetch['9'];
+	$image = $Video_fetch['10'];
+	$video = $Video_fetch['11'];
+		
+		#for artist name
+	$select_Artist = "select * from artist where id='$artist'";
+	$artist_run = mysqli_query($connect,$select_Artist);
+	$artist_fetch = mysqli_fetch_array($artist_run);
+	$artist_name = $artist_fetch['1'];
+	
+	
+	#for Album name
+	$select_Album = "select * from album where id='$album'";
+	$Album_run = mysqli_query($connect,$select_Album);
+	$Album_fetch = mysqli_fetch_array($Album_run);
+	$album_name = $Album_fetch['1'];											
+	$ti_al = $title." | ".$album_name;
+		$t_a = substr($ti_al, 0,40);	
+		
+		
+		$output .= "<div class='card'>
+                        <figure class='card-img figure'>
+                            <div class='img-wrapper'>
+                                <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='Card image' style='height: 238px; width: 100%;'>
+                            </div>
+                            <div class='img-overlay'></div>
+                            <div class='has-bottom-gradient'>
+                                <div class='d-flex'>
+                                    <div class='card-img-overlay'>
+                                        <div class='pt-3 pb-3'>
+                                            <a href='Video.php?Watch=$title'>
+                                                <figure class='float-left mr-3 mt-1'>
+                                                    <i class='icon-play s-36'></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>$title</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class='bottom-gradient bottom-gradient-thumbnail'></div>
+                    </div>";
+		
+		
+		
+	}
+	echo  $output;
+	
+}
+
+
+function Latest_song()
+{
+	global $connect;
+	
+	$output="";
+	
+	$select = "select * from audio ORDER BY id DESC ";
+	$Audio_run = mysqli_query($connect,$select);
+	
+		
+	
+$output .= "<section class='section mt-4'>
+	
+                <div class='row row-eq-height'>
+                    <div class='col-lg-12'>
+                        <div class='card no-b mb-md-3 p-2'>
+<div class='card-body no-p'>
+<div class='tab-content' id='v-pills-tabContent1'>
+
+	
+	
+  <div class='card-body has-items-overlay playlist p-3'>
+	  
+	   <div class='d-flex relative align-items-center justify-content-between'>
+                    <div class='mb-4'>
+                        <h4>Latest Songs</h4>
+                        <p>Enjoy some new awesome music</p>
+                    </div>
+                   
+                </div>
+                                            <div class='row'>";
+											
+	                                   while($Audio_fetch = mysqli_fetch_array($Audio_run))
+									   {
+										   	$id = $Audio_fetch['0'];
+	$title = $Audio_fetch['1'];
+	$artist = $Audio_fetch['2'];
+	$album = $Audio_fetch['3'];
+	$language = $Audio_fetch['4'];
+	$year = $Audio_fetch['5'];
+	$ganre = $Audio_fetch['6'];
+	$lyrics = $Audio_fetch['7'];
+	$composer = $Audio_fetch['8'];
+	$descrip = $Audio_fetch['9'];
+	$image = $Audio_fetch['10'];
+	$audio = $Audio_fetch['11'];
+										   
+										   
+	$selectt = "select * from artist where id='$artist'";
+	$run = mysqli_query($connect,$selectt);
+	$f = mysqli_fetch_array($run);
+	$artist_name = $f['1'];
+	
+	
+	$selecttt = "select * from album where id='$album'";
+	$runn = mysqli_query($connect,$selecttt);
+	$ff = mysqli_fetch_array($runn);
+	$album_name = $ff['1'];
+	
+                                                $output .= "<div class='col-md-2 mb-3'>
+                                                    <figure class='mb-2'>
+                                                        <div class='img-wrapper r-10'>
+                                                            <img class=' r-10' src='dash-board/Artist/$artist_name/$album_name/$title/$image'
+                                                                 alt='/'>
+                                                           <div class='img-overlay text-white'>
+                                    <div class='figcaption'>
+                                        <ul class='list-inline d-flex align-items-center justify-content-between'>
+                                            <li class='list-inline-item'>
+                                                <a href='#' class='snackbar' data-text='Added to favourites' data-pos='top-right' data-showaction='true' data-actiontext='ok' data-actiontextcolor='#fff' data-backgroundcolor='#0c101b'>
+                                                    <i class='icon-heart-o s-18'></i>
+                                                </a>
+                                            </li>
+                                            <li class='list-inline-item '>
+                                                <a class='no-ajaxy media-url' href='dash-board/Artist/$artist_name/$album_name/$title/$audio' data-wave='dash-board/Artist/track1.json'>
+                                                    <i class='icon-play s-48'></i>
+                                                </a>
+                                            </li>
+                                            <li class='list-inline-item'>
+                                                <a href='Songs.php?Music-Player=$title'><i class='icon-more s-18 pt-3'></i></a></li>
+                                        </ul>
+                                        <div class='text-center mt-2'>
+                                            <h5>$title</h5>
+                                            <span>$artist_name</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                                        </div>
+                                                    </figure>
+                                                    <div class='figure-title'>
+                                                        <h6>$title</h6>
+                                                        <small>$artist_name</small>
+                                                    </div>
+                                                </div>";
+												}
+												
+												
+												
+                                           $output .= "</div>
+	  
+	  
+	  
+                                          
+                                        </div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+</section>";
+
+
+	echo  $output;
+	
+}
+
+
 
 
 

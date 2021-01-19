@@ -340,10 +340,27 @@
         </svg>
     </button>
     <div class="searchOverlay__inner  searchOverlay__inner--up ">
-  <form class="searchOverlay__form" >
-      
-	  <input type="text" name="country" placeholder="Search123" autocomplete="off" spellcheck="false" class="form-control" id="country" style="height: 118px;" />
+  <form class="searchOverlay__form" method="get" action="searchh.php" >
+      <div class="row">
+		  <div class="col-md-10">
+	  <input type="text" name="q" placeholder="Search123" autocomplete="off" spellcheck="false" class="form-control" id="q" style="height: 118px;" />
+			  </div>
+		  <div class="col-md-2">
+	  <button type="submit" name="search" class="btn btn-primary" style="
+    float: right;
+    width: 123%;
+    padding: 23px;
+    
+    color: white;
+    font-size: 46px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+"><i class="icon icon-search"></i></button>
+			  </div>
+		  </div>
             <span class="searchOverlay__info">Hit enter to searchOverlay or ESC to close</span>
+	  
       </form>
 		
     </div>
@@ -362,7 +379,7 @@
 	
 	<script>  
  $(document).ready(function(){  
-      $('#country').keyup(function(){  
+      $('#q').keyup(function(){  
            var query = $(this).val();  
            if(query != '')  
            {  
@@ -379,7 +396,7 @@
            }  
       });  
       $(document).on('click', 'h6', function(){  
-           $('#country').val($(this).text());  
+           $('#q').val($(this).text());  
            $('#countryList').fadeOut();  
       });  
  });  
