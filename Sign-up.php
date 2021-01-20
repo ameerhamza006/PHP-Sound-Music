@@ -195,8 +195,9 @@
                             </form>
                         </div>
                         <div class="col-md-5 " style="padding-left: 115px; padding-top: 120px;">
+							<a href="Sign-in.php">
                             <h1 class="mt-3 font-weight-lighter" style="font-size: 28px;">Already Have An Account?</h1>
-
+</a>
                             <div class="pt-2 mb-5">
                                 <p>Lorem ipsum dolor sit amet, sapiente tenetur ut, veritatis.</p>
                             </div>

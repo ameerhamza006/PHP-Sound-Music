@@ -7,6 +7,10 @@ $dbname = "sound";
 
 $connect = mysqli_connect($servername,$dbusername,$dbpassword,$dbname);
 
+if(!$connect){
+	echo "Conection Eror";
+}
+
 
 #Start (Add,List And Update) Language,Ganre,Year,
 #add language
@@ -1014,6 +1018,7 @@ function Update_Album_image()
 #ADD Audio
 function Add_Audio()
 {
+	error_reporting(0);
 	global $connect;
 	
 	if(isset($_POST['abtn']))
@@ -1051,14 +1056,17 @@ function Add_Audio()
 		
 						
 		$image = $_FILES['pic']['name'];
+		$image_type = $_FILES['pic']['type'];
 		$image_old_location = $_FILES['pic']['tmp_name'];
 		$image_new_location = $path.$image;
 		
 		move_uploaded_file($image_old_location,$image_new_location);
 		
 		$audio = $_FILES['audio']['name'];
+		$audio_type = $_FILES['audio']['type'];
 		$audio_old_location = $_FILES['audio']['tmp_name'];
 		$audio_new_location = $path.$audio;
+		
 		
 		move_uploaded_file($audio_old_location,$audio_new_location);
 		
@@ -1077,6 +1085,7 @@ function Add_Audio()
                               <div class='iq-alert-text'><b>Audio</b> Not Upload Someting Wrong!</div>
                            </div>";
 		}
+		
 		
 	}
 }
@@ -1478,6 +1487,7 @@ function Update_music_Audio()
 #ADD video
 function Add_Video()
 {
+
 	global $connect;
 	
 	if(isset($_POST['vbtn']))
@@ -1492,7 +1502,6 @@ function Add_Video()
 		$comboser = $_POST['compo'];
 		$lyrical = $_POST['lyrical'];
 		$descrip = $_POST['des'];
-		
 		
 		
 		
@@ -1515,17 +1524,22 @@ function Add_Video()
 		
 		$sound = "-sound.strategicvision.com.pk";				
 		$image = $_FILES['pic']['name'];
+		
 		$image_old_location = $_FILES['pic']['tmp_name'];
 		$image_new_location = $path.$image;
 		
 		move_uploaded_file($image_old_location,$image_new_location);
 		
 		$video = $_FILES['video']['name'];
+	
 		$video_old_location = $_FILES['video']['tmp_name'];
 		
 		$video_new_location = $path.$video;
 		
+			
+		
 		move_uploaded_file($video_old_location,$video_new_location);
+		
 		
 		$insert = "INSERT INTO videos(title,fk_artist,fk_album,fk_lang,fk_year,fk_ganre,fk_lyrics,compose,discription,image,video) values('$title','$artist','$album','$language','$year','$ganre','$lyrical','$comboser','$descrip','$image','$video')";
 		$run_insert = mysqli_query($connect,$insert);
@@ -1542,6 +1556,7 @@ function Add_Video()
                               <div class='iq-alert-text'><b>Video</b> Not Upload Someting Wrong!</div>
                            </div>";
 		}
+			
 		
 	}
 }

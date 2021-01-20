@@ -70,7 +70,28 @@ if(isset($_GET['search']))
 		
 			 $count_Artist_video_song +=   $count_Artist_audio_song;
 			   
-                $output .= "$name";
+                $output .= "<div class='wrapper'>
+<div class='container-fluid relative animatedParent animateOnce'>
+        <div class='animated fadeInUpShort p-5 ml-lg-5 mr-lg-5'>
+            <section>
+               
+                <div class='wrapper'>
+                    <div class='row has-items-overlay'>
+                       <div class='col-md-4 mb-3' style='margin-top: 40px;'>
+                <figure class='avatar avatar-md float-left mr-3 mt-1'>
+                    <img src='dash-board/Artist/$name/$artist_image' alt=''>
+                </figure>
+                <div>
+                    <h6><a href='Artist.php?Album=$name'>$name</a></h6>
+                
+                </div>
+            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>";
 			  
            }  
       }  
@@ -192,7 +213,26 @@ if(isset($_GET['search']))
 			   $year_name = $fetch_years['3'];
 			   
 			  
-                $output .= "";  
+                $output .= "<div class='wrapper'>
+<div class='container-fluid relative animatedParent animateOnce'>
+        <div class='animated fadeInUpShort p-5 ml-lg-5 mr-lg-5'>
+            <section>
+               
+                <div class='wrapper'>
+                    <div class='row has-items-overlay'>
+                       <div class='col-md-4 mb-3' style='margin-top: 40px;'>
+                
+                <div>
+                    <h6><a href='Artist.php?Album=$year_name'>$year_name</a></h6>
+                
+                </div>
+            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>";  
            }  
 		 
 	  }else{

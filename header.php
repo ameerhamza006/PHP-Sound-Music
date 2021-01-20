@@ -41,6 +41,7 @@
 	$s_address = $fetch['7'];
 	$s_image = $fetch['8'];
 	$s_password = $fetch['9'];
+	$s_role = $fetch['10'];
 	
 	
 	?>
@@ -119,29 +120,43 @@
             </a>
         </div>
         <ul class="sidebar-menu">
+			<?php if($_SESSION['email'] && $s_role == "Admin"){ ?>
+			<li><a class="ajaxifyPage " href="dash-board/index.php">
+                 <i class="icon icon-home s-24"></i><span>Dashboard</span>
+            </a>
+            </li>
+			<?php } ?>
             <li><a class="ajaxifyPage active" href="index.php">
                  <i class="icon icon-home s-24"></i><span>Home</span>
             </a>
             </li>
-            <li><a class="ajaxifyPage" href="categories.html">
-                 <i class="icon icon-layers-1 s-24"></i><span>Categories</span>
+			<li><a class="ajaxifyPage " href="Latest.php">
+                 <i class="icon icon-newspaper s-24"></i> <span>Latest</span>
+            </a>
+            </li>
+            <li><a class="ajaxifyPage" href="Songs.php">
+                 <i class="icon icon-layers-1 s-24"></i><span>Year</span>
             </a>
             <li>
-            <li><a class="ajaxifyPage" href="albums.html">
+            <li><a class="ajaxifyPage" href="Albums.php">
                 <i class="icon icon-windows  s-24"></i><span>Albums</span>
             </a>
             <li>
-            <li><a class="ajaxifyPage" href="videos.html">
+            <li><a class="ajaxifyPage" href="Video.php">
                  <i class="icon icon-video-player-2  s-24"></i><span>Videos</span>
             </a>
             </li>
-            <li><a class="ajaxifyPage" href="events.html">
-                <i class="icon icon-calendar-6 s-24"></i> <span>Events</span>
+            <li><a class="ajaxifyPage" href="Songs.php">
+                 <i class="icon icon-video-player-2  s-24"></i><span>Audio</span>
             </a>
             </li>
 
-            <li><a class="ajaxifyPage" href="gallery.html">
-                <i class="icon icon-photo-camera-1 s-24"></i> <span>Gallery</span>
+            <li><a class="ajaxifyPage" href="Songs.php">
+                <i class="icon icon-photo-camera-1 s-24"></i> <span>Languages</span>
+            </a>
+            </li>
+			<li><a class="ajaxifyPage" href="Artist.php">
+                <i class="icon icon-users s-24"></i> <span>Artists</span>
             </a>
             </li>
             <li><a class="ajaxifyPage" href="blog.html">
@@ -149,10 +164,7 @@
             </a>
             </li>
 
-            <li><a class="ajaxifyPage" href="artists.html">
-                <i class="icon icon-users s-24"></i> <span>Artists</span>
-            </a>
-            </li>
+            
             <li class="menu-item-has-children">
                 <a href="#">
                     <i class="icon icon-menu-4 s-24"></i> <span>Pages</span>

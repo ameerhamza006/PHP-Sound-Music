@@ -31,7 +31,7 @@
          <!-- Sidebar  -->
          <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-               <a href="index.html" class="header-logo">
+               <a href="../index.php" class="header-logo">
                   <img src="../images/logo.png" class="img-fluid rounded-normal" alt="">
                   <div class="logo-title">
                      <span class="text-primary text-uppercase">Sound</span> 
@@ -224,7 +224,7 @@
                            <li><a href="Add-&-List-Adi.php"><i class="ri-record-circle-line"></i>Admins </a></li>
                         </ul>
                      </li>
-                     
+                     <li><a href="../index.php"><i class="ri-record-circle-line"></i>Home</a></li>
                      <li><a href="../Latest.php"><i class="ri-record-circle-line"></i>Latest</a></li>
                      <li><a href="../Albums.php"><i class="ri-record-circle-line"></i>Albums</a></li>
                      <li><a href="../Artist.php"><i class="ri-record-circle-line"></i>Artists</a></li>

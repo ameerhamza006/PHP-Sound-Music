@@ -28,6 +28,153 @@
             <!--@New Releases-->
 		
 <?php Latest_song(); ?>
+		
+		  <!--Latest Posts-->
+            <section class="section">
+                <div class="d-flex relative">
+                    <div class="mb-4">
+                        <h4>Latest Songs</h4>
+                        <p>Checkout What's new song</p>
+                    </div>
+                </div>
+                <div class="lightSlider has-items-overlay"
+                     data-item="3"
+                     data-item-lg="2"
+                     data-item-md="1"
+                     data-item-sm="1"
+                     data-auto="false"
+                     data-pager="false"
+                     data-controls="true"
+                     data-loop="false">
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v5.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay"></div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v8.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay text-white">
+                                <div class="figcaption">
+
+                                </div>
+                            </div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">About Sound</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content.This is a wider card with supporting text below as a natural lead-in to
+                                additional content.This is a wider card with supporting text below as a natural lead-in to
+                                additional content.</p>
+                        </div>
+                       
+                    </div>
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v9.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay text-white">
+                                <div class="figcaption">
+
+                                </div>
+                            </div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                    <div class="card">
+                        <figure class="card-img figure">
+                            <div class="img-wrapper">
+                                <img src="assets/img/demo/v10.jpg" alt="Card image">
+                            </div>
+                            <div class="img-overlay text-white">
+                                <div class="figcaption">
+
+                                </div>
+                            </div>
+                            <div class="has-bottom-gradient">
+                                <div class="d-flex">
+                                    <div class="card-img-overlay">
+                                        <div class="pt-3 pb-3">
+                                            <a href="video-single.html">
+                                                <figure class="float-left mr-3 mt-1">
+                                                    <i class="icon-play s-36"></i>
+                                                </figure>
+                                                <div>
+                                                    <h5>Alexander Pierce</h5>
+                                                    <small> Latest Video Released</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="bottom-gradient bottom-gradient-thumbnail"></div>
+                    </div>
+                </div>
+            </section>
+            <!--@New Releases-->
 
 <?php Song_view_Languages(); ?>
 

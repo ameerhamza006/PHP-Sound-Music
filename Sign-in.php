@@ -119,14 +119,16 @@
                            </form>
                         </div>
                         <div class="col-md-5  p-5">
+							<a href="Sign-up.php">
                             <h1 class="mt-3 font-weight-lighter">Are You New Here?</h1>
-
+</a>
                             <div class="pt
 										-3 mb-5">
                                 <p>Lorem ipsum dolor sit amet, sapiente tenetur ut, veritatis.</p>
                             </div>
-                            <input type="submit" value="Create Account" class="btn btn-outline-primary s-14 pl-4 pr-4">
-
+							<a href="Sign-up.php" class="btn btn-outline-primary s-14 pl-4 pr-4">
+                           Create Account
+</a>
 
                         </div>
                     </div>
