@@ -432,28 +432,28 @@
     <div class="paper_menu ml-auto">
         <div id="dl-menu" class="xv-menuwrapper responsive-menu">
             <ul class="dl-menu align-items-center">
-                <li class="ajaxifyPage"><a href="index.php">Home</a>
+                <li class="ajaxifyPage"><a href="index">Home</a>
                
                 </li>
                
-                <li><a class="ajaxifyPage" href="Latest.php">
+                <li><a class="ajaxifyPage" href="Latest">
                     <span>Latest</span>
                 </a>
                 </li>
 				
-                <li><a class="ajaxifyPage" href="Albums.php">
+                <li><a class="ajaxifyPage" href="Albums">
                     <span>Albums</span>
                 </a>
                 </li>
-				<li><a class="ajaxifyPage" href="Songs.php">
+				<li><a class="ajaxifyPage" href="Songs">
                      <span>Audio</span>
                 </a>
                 </li>
-                <li><a class="ajaxifyPage" href="Video.php">
+                <li><a class="ajaxifyPage" href="Video">
                      <span>Videos</span>
                 </a>
                 </li>
-                 <li><a class="ajaxifyPage" href="Artist.php">
+                 <li><a class="ajaxifyPage" href="Artist">
                      <span>Artists</span>
                 </a>
 				</li>
