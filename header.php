@@ -432,7 +432,7 @@
     <div class="paper_menu ml-auto">
         <div id="dl-menu" class="xv-menuwrapper responsive-menu">
             <ul class="dl-menu align-items-center">
-                <li class="ajaxifyPage"><a href="index">Home</a>
+                <li class="ajaxifyPage"><a href="http://localhost:82/sound/">Home</a>
                
                 </li>
                
