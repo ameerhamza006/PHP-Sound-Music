@@ -525,7 +525,7 @@ echo  "   <section class='mt-0'>
 	$album_name = $Album_fetch['1'];											
 												
 												
-                                               echo  "  <div class='col-md-2 mb-3'>
+                                               echo  "  <div class='col-md-4 mb-3'>
                        <figure class='mb-2'>
                                                         <div class='img-wrapper r-10'>
                                                             <img class=' r-10' src='dash-board/Artist/$artist_name/$album_name/$title/$image'
@@ -1761,8 +1761,9 @@ echo  "
 		$title_album = substr($ti_al, 0,37);
 												
 												
-                                               echo  " <div>
-                        <div>
+                                               echo  " 
+											   <div class='col-md-4 mb-3>
+                        <figure class='mb-2'>
                             <div class='img-wrapper'>
 								<a href='Video.php?Watch=$title'>
                                 <img src='dash-board/Artist/$artist_name/$album_name/$title/$image' alt='/' style=' height: 130px; width: 100%; '>
@@ -1778,6 +1779,7 @@ echo  "
                                 </div>
                             </div>
                         </div>
+						
                     </div> ";
 	
 												}
